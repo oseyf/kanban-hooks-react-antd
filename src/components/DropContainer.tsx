@@ -15,6 +15,7 @@ const allowDropData = (e: any) => {
     console.log('allowDrop(): DraggableItem kendi containerinden çıktığı an buraya girer.');
 }
 
+
 export function DropContainer({ board, items }: { board: Board, items: TodoItem[] }) {
     return (
         <div className="col-4 p-3 " >
@@ -22,10 +23,12 @@ export function DropContainer({ board, items }: { board: Board, items: TodoItem[
                 onDrop={drop}
                 onDragOver={allowDropData}
             >
-               <h4 className="text-center p-3">  {board.name}</h4>
+                <h4 className="text-center p-3">  {board.name}</h4>
                 {items.map((item: TodoItem) => {
                     return <DragItem key={item.id} item={item}></DragItem>
                 })}
+        
+
             </div>
         </div>
     )

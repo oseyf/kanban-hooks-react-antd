@@ -21,17 +21,17 @@ const addItem = (list: TodoItem[], item: TodoItem) => {
     return list.concat(item)
 }
 
-const moveItem = (list: TodoItem[], item: TodoItem) => {
-    return
-}
+// const moveItem = (list: TodoItem[], item: TodoItem) => {
+//     return
+// }
 
-const removeItem = (list: TodoItem[], item: TodoItem) => {
-    return
-}
+// const removeItem = (list: TodoItem[], item: TodoItem) => {
+//     return
+// }
 
-const updateItem = (list: TodoItem[], item: TodoItem) => {
-    return
-}
+// const updateItem = (list: TodoItem[], item: TodoItem) => {
+//     return
+// }
 
 
 

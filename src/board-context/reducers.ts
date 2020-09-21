@@ -21,17 +21,17 @@ const addBoard = (list: Board[], board: Board) => {
     return list.concat(board)
 }
 
-const moveBoard = (list: Board[], board: Board) => {
-    return
-}
+// const moveBoard = (list: Board[], board: Board) => {
+//     return
+// }
 
-const removeBoard = (list: Board[], board: Board) => {
-    return
-}
+// const removeBoard = (list: Board[], board: Board) => {
+//     return
+// }
 
-const updateBoard = (list: Board[], board: Board) => {
-    return
-}
+// const updateBoard = (list: Board[], board: Board) => {
+//     return
+// }
 
 
 

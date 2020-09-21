@@ -4,7 +4,7 @@ const useModal = () => {
   const [isShowing, setIsShowing] = useState(false);
 
   function toggle() {
-    debugger; setIsShowing(!isShowing);
+    setIsShowing(!isShowing);
   }
 
   return {

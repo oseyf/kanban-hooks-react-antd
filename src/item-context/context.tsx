@@ -28,7 +28,7 @@ export const useItemState = (): TodoItem[] => {
 
 export const useItemDispatch = (): React.Dispatch<Actions> => {
     const context = React.useContext(ItemDispatch);
-    debugger; if(context === undefined)  {
+    if(context === undefined)  {
         throw new Error('useItemDispatch hatası');
     }
     return context;

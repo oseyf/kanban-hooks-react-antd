@@ -8,6 +8,7 @@ import { TodoItem } from './item-context/models';
 import { Board } from './board-context/models';
 import { addToList } from './item-context/actions';
 import { addNewBoard } from './board-context/actions';
+import { Header } from './components/Header';
 
 function App() {
 
@@ -71,6 +72,7 @@ function App() {
 
   return (
     <div>
+      <Header/>
       <KanbanContainer />
     </div>
   );
