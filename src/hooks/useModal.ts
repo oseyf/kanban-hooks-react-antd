@@ -1,16 +1,28 @@
 import { useState } from 'react';
 
-const useModal = () => {
-  const [isShowing, setIsShowing] = useState(false);
+export const useItemModal = () => {
+  const [itemModalIsShowing, setItemModalIsShowing] = useState(false);
 
-  function toggle() {
-    setIsShowing(!isShowing);
+  function toggleItemModal() {
+    setItemModalIsShowing(!itemModalIsShowing);
   }
 
   return {
-    isShowing,
-    toggle,
+    itemModalIsShowing,
+    toggleItemModal,
   }
 };
 
-export default useModal;
+
+export const useBoardModal = () => {
+  const [boardModalIsShowing, setBoardModalIsShowing] = useState(false);
+
+  function toggleBoardModal() {
+    setBoardModalIsShowing(!boardModalIsShowing);
+  }
+
+  return {
+    boardModalIsShowing,
+    toggleBoardModal,
+  }
+};

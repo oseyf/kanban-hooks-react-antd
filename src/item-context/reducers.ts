@@ -7,10 +7,10 @@ export const ItemReducer = (state: TodoItem[], action: Actions) => {
             return addItem(state, action.payload);
         // case ActionTypes.Move:
         //     return moveItem(state, action.payload);
-        // case ActionTypes.Remove: 
-        //     return removeItem(state, action.payload);
-        // case ActionTypes.Update: 
-        //     return updateItem(state, action.payload);
+        case ActionTypes.Remove: 
+            return removeItem(state, action.payload);
+        case ActionTypes.Update: 
+            return updateItem(state, action.payload);
         default: 
             return state;
     }
@@ -25,13 +25,15 @@ const addItem = (list: TodoItem[], item: TodoItem) => {
 //     return
 // }
 
-// const removeItem = (list: TodoItem[], item: TodoItem) => {
-//     return
-// }
+const removeItem = (list: TodoItem[], item: TodoItem) => {
+    debugger; return list.filter((listItem: TodoItem) => listItem.id !== item.id)
+}
 
-// const updateItem = (list: TodoItem[], item: TodoItem) => {
-//     return
-// }
+const updateItem = (list: TodoItem[], item: TodoItem) => {
+    const index = list.findIndex((listItem: TodoItem) => listItem.id === item.id);
+    list[index] = item;
+    debugger; return [...list];
+}
 
 
 

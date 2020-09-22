@@ -1,11 +1,8 @@
 import React from 'react'
 import { useBoardState } from '../board-context/context';
 import { Board } from '../board-context/models';
-import useModal from '../hooks/useModal';
-import { addToList } from '../item-context/actions';
-import { useItemDispatch, useItemState } from '../item-context/context';
+import { useItemState } from '../item-context/context';
 import { TodoItem } from '../item-context/models';
-import AddModal from './AddModal';
 import { DropContainer } from './DropContainer';
 
 

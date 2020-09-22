@@ -18,3 +18,30 @@ body{
 .board{
   min-height: 600px !important;
 }
+
+.plaintext-input, .plaintext-input {
+  border: transparent !important;
+  pointer-events: none;
+  padding: 0 !important;
+}
+
+.plaintext-input::placeholder {
+  color: #111 !important;
+}
+
+.pointer-cursor {
+  cursor: pointer;
+}
+
+.ant-picker-disabled {
+  padding: 0 !important;
+}
+
+.ant-picker-disabled .ant-picker-input input {
+  color: black !important;
+  padding: 0 !important;
+}
+
+.ant-picker-disabled .ant-picker-suffix {
+  display: none;
+}
