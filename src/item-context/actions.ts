@@ -9,7 +9,7 @@ export enum ActionTypes {
 
 export type Actions = {
     type: ActionTypes,
-    payload: TodoItem
+    payload: TodoItem | any
 }
 
 // Action - ADD_TO_LIST
@@ -33,7 +33,7 @@ export const removeItem = (item: TodoItem) => {
 
 // Action - MOVE_ITEM
 
-export const moveItem = (item: TodoItem) => {
+export const moveItem = (item: any) => {
     return {
         type: ActionTypes.Move,
         payload: item

@@ -15,9 +15,8 @@ export function DragItem({ item }: { item: TodoItem }) {
 
 
     const drag = (e: any) => {
-        e.dataTransfer.setData('transfer', e.target.id);
-        const sendedItem = JSON.stringify(item);
-        e.dataTransfer.setData('data', sendedItem);
+        const sendedItem = JSON.stringify({ id: e.target.id, item: item });
+        e.dataTransfer.setData('transfer', sendedItem);
     }
 
     const notAllowDrop = (e: any) => {
@@ -39,14 +38,17 @@ export function DragItem({ item }: { item: TodoItem }) {
                 onDragStart={drag}
                 onDragOver={notAllowDrop} className="p-2 m-3 bg-light shadow shadow-sm rounded "
             >
-                <div className="row px-3">
+                <div className="row p-2">
                     <div className="col-6 pointer-cursor" onClick={toggleItemModal}
                     >
                         <h5>{item.title}</h5>
                     </div>
-                    <div className="col-6 text-right text-dark">
-                        <i className="fas fa-trash-alt text-danger px-3 pointer-cursor" onClick={deleteItem}></i>
-                        <i className="fas fa-calendar-week"></i> {moment(item.date).format('DD/MM/YYYY')}
+                    <div className="col-6 text-right">
+                        <span className="fa-stack text-danger fa-10px ">
+                            <i className="fa fa-circle fa-stack-2x icon-background"></i>
+                            <i className="fas fa-trash-alt fa-stack-1x text-white pointer-cursor" onClick={deleteItem}></i>
+                        </span>
+                        <i className="fas fa-calendar-week"></i> {moment(item.date).format('DD-MM-YYYY')}
                     </div>
                     <div className="col-12">
                         <p>{item.content}</p>

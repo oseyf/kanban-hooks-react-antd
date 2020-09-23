@@ -1,47 +1,68 @@
-html, body {
-  height: 100%;
-  margin: 0;
+* {
+    font-family: 'Poppins', sans-serif;
 }
 
-body{
-  background: #152635 !important;
+html,
+body {
+    height: 100%;
+    margin: 0
 }
+
+body {
+    background: #152635 !important;
+}
+
 .vh-100 {
-  min-height: 100vh;
+    min-height: 100vh;
 }
 
-.bg-dark-blue{
-  background: #001529 !important;
-  color: white;
+.bg-dark-blue {
+    background: #001529 !important;
+    color: white;
 }
 
-.board{
-  min-height: 600px !important;
+.board {
+    min-height: 600px !important;
 }
 
-.plaintext-input, .plaintext-input {
-  border: transparent !important;
-  pointer-events: none;
-  padding: 0 !important;
+.plaintext-input,
+.plaintext-input {
+    border: transparent !important;
+    pointer-events: none;
+    padding: 0 !important;
 }
 
 .plaintext-input::placeholder {
-  color: #111 !important;
+    color: #111 !important;
 }
 
 .pointer-cursor {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .ant-picker-disabled {
-  padding: 0 !important;
+    padding: 0 !important;
 }
 
 .ant-picker-disabled .ant-picker-input input {
-  color: black !important;
-  padding: 0 !important;
+    color: black !important;
+    padding: 0 !important;
 }
 
 .ant-picker-disabled .ant-picker-suffix {
-  display: none;
+    display: none;
+}
+
+.fa-10px {
+    font-size: 10px;
+}
+
+.bg-gray-light {
+    background-color: #ebecf0;
+}
+
+.notification-count {
+    position: relative;
+    top: -10px;
+    right: 10px;
 }

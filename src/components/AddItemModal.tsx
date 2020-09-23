@@ -7,7 +7,7 @@ import { addToList } from '../item-context/actions';
 import moment from 'moment';
 import { TodoItem } from '../item-context/models';
 import { updateItem } from '../item-context/actions';
-
+import locale from 'antd/es/date-picker/locale/tr_TR';
 
 const AddItemModal = ({ isShowing, hide, isReadable, dataItem }: { isShowing: boolean, hide: any, addFunc?: any, isReadable?: boolean, dataItem?: TodoItem }) => {
     const [readable, setReadable] = useState(isReadable);
@@ -19,7 +19,7 @@ const AddItemModal = ({ isShowing, hide, isReadable, dataItem }: { isShowing: bo
     const itemDispatch = useItemDispatch();
     const readableInput = readable ? 'plaintext-input' : '';
     const onSubmitHandler = (event: any) => {
-        debugger;
+
         event.preventDefault();
         console.log(title, content, date)
         if (title !== '' && content !== '' && date !== null) {
@@ -44,10 +44,11 @@ const AddItemModal = ({ isShowing, hide, isReadable, dataItem }: { isShowing: bo
                         boardId: 1
                     })
                 );
+                setTitle('');
+                setContent('');
+                setDate(new Date());
             }
-            setTitle('');
-            setContent('');
-            setDate(new Date());
+
             hide();
         }
     };
@@ -68,7 +69,7 @@ const AddItemModal = ({ isShowing, hide, isReadable, dataItem }: { isShowing: bo
 
             <React.Fragment>
                 <Modal
-                    title="Add New Item to Wishlist"
+                    title={readable ? 'Edit Existing Item' : 'Add New Item to Wishlist' }
                     visible={isShowing}
                     onCancel={hide}
                     footer={null}
@@ -92,7 +93,7 @@ const AddItemModal = ({ isShowing, hide, isReadable, dataItem }: { isShowing: bo
                     </div>
                     <div className="form-group">
                         {readable ? <span className="font-weight-bold">Date</span> : null}
-                        <DatePicker disabled={readable} value={moment(date)} bordered={readable ? !isReadable : undefined} className="mb-3 form-control" onChange={event => setDate(event ? event.toDate() : new Date())} size="large" />
+                        <DatePicker format="DD/MM/YYYY"  locale={locale} disabled={readable} value={moment(date)} bordered={readable ? !isReadable : undefined} className="mb-3 form-control" onChange={event => setDate(event ? event.toDate() : new Date())} size="large" />
 
                     </div>
 

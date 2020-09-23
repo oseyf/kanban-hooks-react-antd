@@ -15,7 +15,7 @@ export const Button = ({ buttonClass, buttonType, onClick, content, float, icon 
     const classProp = buttonClasses.find(item => { return item.name === buttonClass })?.class;
     const typeProp = buttonClasses.find(item => { return item.name === buttonType })?.class;
     return (
-        <button className={classProp + ' ' + typeProp + ' mx-1 float-' + float} onClick={onClick}>
+        <button className={'btn ' + classProp + ' ' + typeProp + ' btn-sm float-' + float} onClick={onClick}>
             {icon ? <i className={'fas fa-' + icon}></i> : ''}   {content}
         </button>
 

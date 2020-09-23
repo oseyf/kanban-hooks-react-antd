@@ -1,30 +1,35 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Board } from '../board-context/models';
-import { useItemDispatch } from '../item-context/context';
+import { moveItem, updateItem } from '../item-context/actions';
+import { useItemDispatch, useItemState } from '../item-context/context';
 import { TodoItem } from '../item-context/models';
 import { DragItem } from './DragItem';
 
 
 export function DropContainer({ board, items }: { board: Board, items: TodoItem[] }) {
     const itemDispatch = useItemDispatch();
+    const itemList = useItemState();
+
     const drop = (e: any) => {
         e.preventDefault();
-        const data = e.dataTransfer.getData('transfer');
-        const item: TodoItem = JSON.parse(e.dataTransfer.getData('data'));
-        console.log(item);
-        
-        e.target.appendChild(document.getElementById(data));
-    }
+        const data = JSON.parse(e.dataTransfer.getData('transfer'));
+        const id = data.id;
+        const existItem = data.item;
 
+
+        itemDispatch(
+            moveItem({
+                item: existItem,
+                toBoard: board.id
+            }));
+    }
     const allowDropData = (e: any) => {
         e.preventDefault();
-        console.log('allowDrop(): DraggableItem kendi containerinden çıktığı an buraya girer.');
     }
 
-
     return (
-        <div className="col-4 p-3 " >
-            <div className="bg-white py-2 board rounded"
+        <div className="col-3 p-3 flex-board" >
+            <div className="bg-gray-light py-2 board rounded"
                 onDrop={drop}
                 onDragOver={allowDropData}
             >
